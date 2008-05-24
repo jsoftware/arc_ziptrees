@@ -1,8 +1,6 @@
 NB. built from project: ~user/jsrc/addons/arc/ziptrees/ziptrees
 NB. Verbs for zipping and extracting directory trees using the arc/zip addon
 
-script_z_ '~system/main/dir.ijs'
-
 coclass 'rgsztrees'
 
 
