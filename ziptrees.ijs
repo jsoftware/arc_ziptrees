@@ -6,7 +6,7 @@ script_z_ '~system/main/dir.ijs'
 coclass 'rgsztrees'
 
 
-require 'arc/zip/zfiles'
+require 'arc/zip/zfiles general/dirutils'
 
 NB.*unziptree v Unzips zipfile y into directory x
 NB. form: ToDir unziptree FromZip

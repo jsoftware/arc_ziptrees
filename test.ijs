@@ -1,7 +1,7 @@
 NB. Tests for ziptrees
 NB. To run all tests, select all file contents and choose Run|Selection
 
-load '~addons/general/ziptrees/ziptrees.ijs'
+load '~addons/arc/ziptrees/ziptrees.ijs'
 
 SRCDIR=: jpath '~.system/tools'
 TRGZIP=: jpath '~temp/toolstree.zip'

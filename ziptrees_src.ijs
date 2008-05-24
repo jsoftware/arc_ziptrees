@@ -1,6 +1,6 @@
 NB. Verbs for zipping and extracting directory trees using the arc/zip addon
 
-require 'arc/zip/zfiles'
+require 'arc/zip/zfiles general/dirutils'
 
 NB.*unziptree v Unzips zipfile y into directory x
 NB. form: ToDir unziptree FromZip
