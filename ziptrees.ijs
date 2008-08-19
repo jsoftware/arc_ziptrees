@@ -1,4 +1,4 @@
-NB. built from project: ~user/jsrc/addons/arc/ziptrees/ziptrees
+NB. built from project: ~Addons/arc/ziptrees/ziptrees
 NB. Verbs for zipping and extracting directory trees using the arc/zip addon
 
 coclass 'rgsztrees'

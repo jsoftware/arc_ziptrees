@@ -26,5 +26,5 @@ FILES=: 0 : 0
 history.txt
 manifest.ijs
 ziptrees.ijs
-test.ijs
+test_ziptrees.ijs
 )

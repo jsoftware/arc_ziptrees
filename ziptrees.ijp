@@ -11,9 +11,9 @@ DEVFILES=: ''
 DEVLIBS=: ''
 
 OTHERFILES=: 0 : 0
-~Addons/arc/ziptrees/manifest.ijs
-~Addons/arc/ziptrees/test.ijs
 ~Addons/arc/ziptrees/history.txt
+~Addons/arc/ziptrees/manifest.ijs
+~Addons/arc/ziptrees/test_ziptrees.ijs
 )
 
 TARGETFILE=: '~Addons/arc/ziptrees/ziptrees.ijs'
