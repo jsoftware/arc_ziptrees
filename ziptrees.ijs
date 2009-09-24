@@ -1,10 +1,8 @@
-NB. built from project: ~Addons/arc/ziptrees/ziptrees
 NB. Verbs for zipping and extracting directory trees using the arc/zip addon
 
-coclass 'rgsztrees'
-
-
 require 'arc/zip/zfiles general/dirutils'
+
+coclass 'rgsztrees'
 
 NB.*unziptree v Unzips zipfile y into directory x
 NB. form: ToDir unziptree FromZip
@@ -115,9 +113,10 @@ ztypes=: [: >: '/' = [: {:@> [: {."1 zdir
 zextract=: fwrite~ zread
 zcompress=: zwrite~ fread
 
+NB. =========================================================
+NB. Export to z locale
+
 unziptree_z_=: unziptree_rgsztrees_
 zipfiles_z_=: zipfiles_rgsztrees_
 ziptree_z_=: ziptree_rgsztrees_
 ztypes_z_=: ztypes_rgsztrees_
-
-
