@@ -5,6 +5,15 @@ require 'arc/zip/zfiles general/dirutils'
 
 coclass 'rgsztrees'
 
+3 :0''  NB. hack to retain J6 compatibility
+if. 7 > 0". 1{ 9!:14'' 
+ do.   SEP=: PATHSEP_j_   NB. J6
+ else. SEP=: '/'          NB. J7
+end.
+)
+
+termsep=: termsep_rgsdirutils_
+
 NB.*unziptree v Unzips zipfile y into directory x
 NB. form: ToDir unziptree FromZip
 NB. returns: 2-item numeric list
@@ -13,12 +22,12 @@ NB.       1{ number of files successfully extracted
 NB. Any existing files with the same filename will be written over.
 unziptree=: 4 : 0
   'todir fromzip'=. x;y
-  todir=. addPS todir
+  todir=. termsep todir
   if. -.fexist fromzip do. 0 0 return. end.      NB. exit if fromzip not found
   fromall=. /:~{."1 zdir fromzip
   dirmsk=. '/'={:@> fromall
   fromfiles=. (-.dirmsk)#fromall
-  repps=. (<'/',PATHSEP_j_) charsub&.> ]         NB. replaces '/' with PATHSEP_j_
+  repps=. (<'/',SEP) charsub&.> ]                NB. replaces '/' with SEP
   aprf=. ] ,&.>~ [: < [                          NB. catenates x to start of each y
   tofiles=. repps fromfiles
   tofiles=. todir aprf tofiles
@@ -40,16 +49,16 @@ NB.       1{ number of files written to zipfile
 ziptree=: 4 : 0
   'tozip fromdir'=. x;y
   if. -.direxist fromdir do. 0 0 return. end. NB. exit if fromdir not found
-  repps=. (<PATHSEP_j_,'/') charsub&.> ]      NB. replaces PATHSEP_j_ with '/'
+  repps=. (<SEP,'/') charsub&.> ]             NB. replaces SEP with '/'
   dprf=. ] }.&.>~ [: # [                      NB. drops #x chars from beginning of each y
-  fromdir=. addPS fromdir
-  fromdirs=. addPS each }.dirpath fromdir
+  fromdir=. termsep fromdir
+  fromdirs=. termsep each }.dirpath fromdir
   todirs=. repps fromdir dprf fromdirs
   todirs=. todirs,.<tozip
   fromfiles=. {."1 dirtree fromdir
   tofiles=. repps fromdir dprf fromfiles
   tofiles=. tofiles,.<tozip
-  zipdir=. PATHSEP_j_ dropto&.|. tozip
+  zipdir=. SEP dropto&.|. tozip
   resdir=. pathcreate zipdir                  NB. create dirs in tozip path if necessary
   resdir=. resdir, 0= (((#todirs),0)$'') zwrite"1 todirs NB. create dirs in tozip
   resfile=. 0&<@>tofiles zcompress"1 0 fromfiles
@@ -77,7 +86,7 @@ zipfiles=: 4 : 0
   fromfiles=. boxopen y
   'tozip dirinf'=. 2{. boxopen x
   if. *./-.fexist @> fromfiles do. 0 return. end.      NB. stop if no fromfiles found
-  repps=. (<PATHSEP_j_,'/') charsub&.> ]               NB. replaces PATHSEP_j_ with '/'
+  repps=. (<SEP,'/') charsub&.> ]                      NB. replaces SEP with '/'
   dprf=. ] }.&.>~ [: # [                               NB. drops #x chars from beginning of each y
   aprf=. ] ,&.>~ [: < [                                NB. catenates x to start of each y
   if. (0-:dirinf) +. (''-:dirinf) *. 1=#fromfiles do.  NB. no dirs or only one file to zip
@@ -86,7 +95,7 @@ zipfiles=: 4 : 0
     todirs=. ''
   else.
     basedir=. (0 i. ~ *./ 2=/\>fromfiles){."1 >{.fromfiles NB. find base directory of files
-    basedir=. PATHSEP_j_ dropto&.|. basedir
+    basedir=. SEP dropto&.|. basedir
     if. 1-:dirinf do.
       dirinf=. basedir                                 NB. prefix to add is basedir if dirinf is 1
     else.
@@ -98,7 +107,7 @@ zipfiles=: 4 : 0
     todirs=. todirs,.<tozip
     tofiles=. tofiles,.<tozip
   end.
-  zipdir=. PATHSEP_j_ dropto&.|. tozip
+  zipdir=. SEP dropto&.|. tozip
   resdir=. pathcreate zipdir                              NB. create dirs in tozip path if necessary
   resdir=. resdir, 0= (((#todirs),0)$'') zwrite"1 todirs  NB. create dirs in tozip
   resfile=. 0&<@>tofiles zcompress"1 0 fromfiles

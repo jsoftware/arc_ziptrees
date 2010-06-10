@@ -6,14 +6,14 @@ DESCRIPTION=: 0 : 0
 Zips and unzips directory trees to and from zip files.
 Uses the the arc/zip addon.
 
-Copyright 2008 (C) Ric Sherlock
+Contributed by Ric Sherlock
 )
 
 LABCATEGORY=: 'General'
 
-VERSION=: '1.0.2'
+VERSION=: '1.0.3'
 
-RELEASE=: 'j602'
+RELEASE=: 'j602 j701'
 
 DEPENDS=: 0 : 0
 arc/zip/zfiles

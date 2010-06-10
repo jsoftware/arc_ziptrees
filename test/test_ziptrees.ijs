@@ -6,7 +6,7 @@ Note 'To run all tests:'
  load 'arc/ziptrees/test/test_ziptrees'
 )
 
-SRCDIR=: jpath '~.system/tools'
+SRCDIR=: jpath '~tools'
 TRGZIP=: jpath '~temp/toolstree.zip'
 TRGDIR=: jpath '~temp/testziptrees'
 isMatch=: 'no difference' -: _1 {:: [: <;._2 LF ,~ ]
