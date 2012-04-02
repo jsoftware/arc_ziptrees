@@ -20,7 +20,7 @@ arc/zip/zfiles
 general/dirutils
 )
 
-PLATFORMS=: 'win linux darwin'
+PLATFORMS=: ''
 
 FILES=: 0 : 0
 history.txt
