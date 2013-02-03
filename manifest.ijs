@@ -11,9 +11,9 @@ Contributed by Ric Sherlock
 
 LABCATEGORY=: 'General'
 
-VERSION=: '1.0.3'
+VERSION=: '1.0.4'
 
-RELEASE=: 'j602 j701'
+RELEASE=: 'j602 j701 j801'
 
 DEPENDS=: 0 : 0
 arc/zip/zfiles

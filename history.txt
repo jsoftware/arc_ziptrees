@@ -1,5 +1,8 @@
 general/ziptrees - change history
 
+== 1.0.4 ==
+ * chg: j801 support
+
 == 1.0.3 ==
  * chg: j701 support
  * chg: standardize testing methodology
