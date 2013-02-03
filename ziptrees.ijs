@@ -5,13 +5,6 @@ require 'arc/zip/zfiles general/dirutils'
 
 coclass 'rgsztrees'
 
-3 :0''  NB. hack to retain J6 compatibility
-if. IFJ6
- do.   SEP=: PATHSEP_j_   NB. J6
- else. SEP=: '/'          NB. J7
-end.
-)
-
 termsep=: termsep_rgsdirutils_
 
 NB.*unziptree v Unzips zipfile y into directory x
