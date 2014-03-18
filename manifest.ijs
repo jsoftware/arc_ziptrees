@@ -11,12 +11,12 @@ Contributed by Ric Sherlock
 
 LABCATEGORY=: 'General'
 
-VERSION=: '1.0.5'
+VERSION=: '1.0.6'
 
 RELEASE=: 'j701 j801'
 
 DEPENDS=: 0 : 0
-arc/zip/zfiles
+arc/zip
 general/dirutils
 )
 
