@@ -11,7 +11,7 @@ Contributed by Ric Sherlock
 
 LABCATEGORY=: 'General'
 
-VERSION=: '1.0.7'
+VERSION=: '1.0.8'
 
 RELEASE=: 'j802'
 
