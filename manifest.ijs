@@ -11,9 +11,9 @@ Contributed by Ric Sherlock
 
 LABCATEGORY=: 'General'
 
-VERSION=: '1.0.9'
+VERSION=: '1.0.10'
 
-RELEASE=: 'j802 j803'
+RELEASE=: 'j802 j803 j804'
 
 DEPENDS=: 0 : 0
 arc/zip
