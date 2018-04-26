@@ -13,7 +13,9 @@ LABCATEGORY=: 'General'
 
 VERSION=: '1.0.13'
 
-RELEASE=: 'j802 j803 j804 j805 j806 j807'
+RELEASE=: ''
+
+FOLDER=: 'arc/ziptrees'
 
 DEPENDS=: 0 : 0
 arc/zip
