@@ -13,7 +13,7 @@ LABCATEGORY=: 'General'
 
 VERSION=: '1.0.13'
 
-RELEASE=: ''
+RELEASE=: 'j804 j807'
 
 FOLDER=: 'arc/ziptrees'
 
